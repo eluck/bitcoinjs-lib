@@ -20,14 +20,16 @@
     "integration": "mocha test/integration/",
     "standard": "standard",
     "test": "npm run standard && npm run coverage",
-    "unit": "mocha"
+    "unit": "mocha",
+    "prepublish": "npm run build",
+    "build": "babel src -d lib"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/bitcoinjs/bitcoinjs-lib.git"
   },
   "files": [
-    "src"
+    "lib"
   ],
   "dependencies": {
     "bech32": "0.0.3",
@@ -48,6 +50,8 @@
   },
   "devDependencies": {
     "async": "^2.0.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "bip39": "^2.3.0",
     "bs58": "^4.0.0",
     "cb-http-client": "^0.2.0",
